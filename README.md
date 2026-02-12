@@ -44,10 +44,10 @@ covered.
 
 # Meet the Team
 
-- **[Ritik Kumar]:** Frontend Guru & UI/UX Designer (Responsible for animations,
+- **[Ritik Kumar]:** Frontend & UI Designer (Responsible for animations,
     layouts, and CSS).
-- **[Pranchal Duseja]:** Logic & Auth Master (Responsible for the quiz engine, timer
-    logic, and LocalStorage).
-- **[Ronit Rai]:**  
+- **[Ronit Rai]:** Logic & Auth (Responsible for the quiz engine, timer
+    logic).
+- **[Pranchal Duseja]:** Local Data Storage and Timer Logic
 
 
