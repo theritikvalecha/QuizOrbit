@@ -40,7 +40,7 @@ covered.
 2. **Open index.html:** Open this file in any modern web browser like Chrome or Edge.
 3. **Sign Up:** Go to the signup page, create your account, and it will be saved to your
     browser immediately.
-4. **Play:** Log in, pick a subject from the dashboard, and start testing your knowledge!
+4. **Play:** Log in, pick a subject from the dashboard, and start testing your knowledge.
 
 # Meet the Team
 
