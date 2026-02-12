@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "index.html";
+    }
+</script>
+
+<header style="display:flex; justify-content:space-between; align-items:center; padding:20px;">
+    <h1>Choose Subject With Category For Quiz</h1>
+    <button id="logoutBtn" style="padding:8px 16px; cursor:pointer;">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </button>
+</header>
+
+<div class="container">
+    <div class="grid-container">
+
+        <div class="gig-box">
+            <div class="icon-section orange"><i class="fa-solid fa-earth-americas"></i></div>
+            <div class="content-section">
+                <p class="category">QUIZ</p>
+                <h3>General Knowledge</h3>
+                <div class="info">
+                    <span><i class="fa-solid fa-clipboard-question"></i> 10 Questions</span>
+                </div>
+                <div class="level-options">
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=gk&level=easy'">Easy</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=gk&level=normal'">Medium</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=gk&level=hard'">Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gig-box">
+            <div class="icon-section blue"><i class="fas fa-atom"></i></div>
+            <div class="content-section">
+                <p class="category">QUIZ</p>
+                <h3>Science</h3>
+                <div class="info">
+                    <span><i class="fa-solid fa-clipboard-question"></i> 10 Questions</span>
+                </div>
+                <div class="level-options">
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=science&level=easy'">Easy</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=science&level=normal'">Medium</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=science&level=hard'">Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gig-box">
+            <div class="icon-section teal"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="content-section">
+                <p class="category">QUIZ</p>
+                <h3>Computer</h3>
+                <div class="info">
+                    <span><i class="fa-solid fa-clipboard-question"></i> 10 Questions</span>
+                </div>
+                <div class="level-options">
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=computer&level=easy'">Easy</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=computer&level=normal'">Medium</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=computer&level=hard'">Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gig-box">
+            <div class="icon-section green"><i class="fa-solid fa-monument"></i></div>
+            <div class="content-section">
+                <p class="category">QUIZ</p>
+                <h3>Pakistan Studies</h3>
+                <div class="info">
+                    <span><i class="fa-solid fa-clipboard-question"></i> 10 Questions</span>
+                </div>
+                <div class="level-options">
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=pak_studies&level=easy'">Easy</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=pak_studies&level=normal'">Medium</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=pak_studies&level=hard'">Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gig-box">
+            <div class="icon-section purple"><i class="fa-solid fa-language"></i></div>
+            <div class="content-section">
+                <p class="category">QUIZ</p>
+                <h3>English</h3>
+                <div class="info">
+                    <span><i class="fa-solid fa-clipboard-question"></i> 10 Questions</span>
+                </div>
+                <div class="level-options">
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=english&level=easy'">Easy</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=english&level=normal'">Medium</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=english&level=hard'">Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gig-box">
+            <div class="icon-section red"><i class="fa-solid fa-brain"></i></div>
+            <div class="content-section">
+                <p class="category">QUIZ</p>
+                <h3>IQ Test</h3>
+                <div class="info">
+                    <span><i class="fa-solid fa-clipboard-question"></i> 10 Questions</span>
+                </div>
+                <div class="level-options">
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=iq&level=easy'">Easy</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=iq&level=normal'">Medium</button>
+                    <button class="level-btn" onclick="location.href='quiz.html?subject=iq&level=hard'">Hard</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "index.html";
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Quiz Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small adjustment to fit more fields on the screen */
+        .login-box {
+            top: 10px; 
+            padding: 30px 40px;
+        }
+        h2 { margin-bottom: 20px; }
+        .input-group { margin-bottom: 15px; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle-container" id="circleContainer"></div>
+
+        <div class="login-box">
+            <h2>Sign Up</h2>
+
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <span class="input-icon"><i class="fa-solid fa-user" style="color: #ffffff;"></i></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                    <span class="input-icon"><i class="fa-solid fa-user" style="color: #ffffff;"></i></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <span class="input-icon"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="input-icon"><i class="fa-solid fa-lock" style="color: #ffffff;"></i></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <span class="input-icon"><i class="fa-solid fa-shield-halved" style="color: #ffffff;"></i></span>
+                </div>
+
+                <button type="submit" class="login-btn">REGISTER</button>
+            </form>
+
+            <div class="signup-link">
+                <p style="color: rgba(255,255,255,0.6); font-size: 13px;">Already have an account? 
+                    <a href="index.html">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ANIMATION 
+    const circleContainer = document.getElementById('circleContainer');
+    const numBars = 50;
+    let activeBars = 0;
+
+    for (let i = 0; i < numBars; i++) {
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        bar.style.transform = `rotate(${(360 / numBars) * i}deg) translateY(-170px)`;
+        circleContainer.appendChild(bar);
+    }
+
+    function animateBars() {
+        const bars = document.querySelectorAll('.bar');
+        setInterval(() => {
+            bars[activeBars % numBars].classList.add('active');
+            if (activeBars > 8) {
+                bars[(activeBars - 8) % numBars].classList.remove('active');
+            }
+            activeBars++;
+        }, 100);
+    }
+    animateBars();
+
+    // SIGNUP LOGIC WITH LOCAL STORAGE
+    const signupForm = document.getElementById('signupForm');
+
+    signupForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get values from your existing input IDs
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // 1. Validate Passwords
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        // 2. Get existing users or initialize empty array
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // 3. Check if user already exists
+        const userExists = users.some(user => user.email === email);
+        if (userExists) {
+            alert("This email is already registered. Please login.");
+            return;
+        }
+
+        // 4. Create and save new user object
+        const newUser = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password
+        };
+
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Account created successfully! Please login.");
+        window.location.href = "index.html"; 
+    });
+</script>
+</body>
+</html>
