@@ -48,6 +48,6 @@ covered.
     layouts, and CSS).
 - **[Ronit Rai]:** Logic & Auth (Responsible for the quiz engine, timer
     logic).
-- **[Pranchal Duseja]:** Local Data Storage and Timer Logic
+- **[Pranchal Duseja]:** Local Data Storage and Timer Logic.
 
 
