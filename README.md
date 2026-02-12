@@ -46,8 +46,7 @@ covered.
 
 - **[Ritik Kumar]:** Frontend & UI Designer (Responsible for animations,
     layouts, and CSS).
-- **[Ronit Rai]:** Logic & Auth (Responsible for the quiz engine, timer
-    logic).
+- **[Ronit Rai]:** Logic & Auth (Responsible for the quiz engine).
 - **[Pranchal Duseja]:** Local Data Storage and Timer Logic.
 
 
